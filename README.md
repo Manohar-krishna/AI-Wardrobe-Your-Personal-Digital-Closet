@@ -99,36 +99,6 @@ Fashion enthusiasts, creators, and everyday users frequently encounter challenge
 
 ---
 
-## 🛠️ Tech Stack
-
-*Add your technology stack here*
-
----
-
-## 📦 Installation
-
-*Add installation instructions here*
-
----
-
-## 🎮 Usage
-
-*Add usage instructions and examples here*
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please feel free to submit issues and pull requests.
-
----
-
-## 📄 License
-
-*Add your license information here*
-
----
-
 <div align="center">
 
 *Transforming wardrobes, one outfit at a time*
