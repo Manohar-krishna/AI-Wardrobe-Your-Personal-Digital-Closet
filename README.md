@@ -1,7 +1,7 @@
 # AI-Wardrobe-Your-Personal-Digital-Closet
-Fashion enthusiasts, creators, and everyday users frequently encounter challenges in managing scattered inspiration, lacking a centralised wardrobe management system, and lacking insights into their fashion habits.
+Fashion enthusiasts, creators, and everyday users frequently encounter challenges in managing scattered inspiration, lacking a centralised wardrobe management system and lacking insights into their fashion habits.
 
-## 💡 Our Solution
+## Our Solution
 
 **AI Wardrobe** is an intelligent digital closet that brings order, creativity, and sustainability to your fashion journey.
 
@@ -14,30 +14,30 @@ Fashion enthusiasts, creators, and everyday users frequently encounter challenge
 
 ---
 
-## ✨ Features
+##  Features
 
-### 🏗️ Wardrobe Builder
+###  Wardrobe Builder
 - Import clothes via direct links or image uploads
 - Support for multiple sources (Pinterest, Myntra, local files)
 - Instant cataloging of wardrobe items
 
-### 🤖 AI Categorization
+### AI Categorization
 - Automatic detection of clothing category (shirts, pants, dresses, etc.)
 - Color recognition and tagging
 - Occasion-based classification (casual, formal, party, sports)
 
-### 👔 Outfit Generator
+###  Outfit Generator
 - Daily outfit suggestions based on weather, occasion, and preferences
 - Smart mix-and-match recommendations
 - Styled looks using only your wardrobe items
 
-### 📊 Analytics Tracker
+###  Analytics Tracker
 - Wardrobe usage statistics
 - Most/least worn items tracking
 - Fashion trend insights
 - Seasonal usage patterns
 
-### 🔗 Unified Agentic App Collections
+###  Unified Agentic App Collections
 - Single-platform access to Pinterest and Myntra
 - Streamlined fashion discovery and shopping
 
@@ -60,26 +60,26 @@ Fashion enthusiasts, creators, and everyday users frequently encounter challenge
 
 ---
 
-## 🌍 Impact
+##  Impact
 
-### ♻️ Sustainability
+###  Sustainability
 - Promotes clothing reuse and maximizes wardrobe potential
 - Reduces fast fashion waste by encouraging thoughtful purchasing
 - Extends clothing lifecycle through better organization
 
-### 💰 Cost Savings
+###  Cost Savings
 - Informed shopping decisions based on wardrobe gaps
 - Prevents duplicate purchases
 - Usage insights help optimize clothing investments
 
-### 🎨 Creativity
+###  Creativity
 - Discover new outfit combinations from existing items
 - Break out of fashion routines with AI suggestions
 - Experiment with styles confidently
 
 ---
 
-## 🚀 Future Scope
+##  Future Scope
 
 ### Phase 1: Enhanced Experience
 - **Virtual Try-On**: AI-powered image overlays for realistic outfit previews
