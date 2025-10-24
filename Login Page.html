@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stylo - Login Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+                        <!--Homepage - NAVBAR-->
+  <header>
+    <div class="navbar">
+    <h1 class="logo"> STYLO</h1>
+    <p class="text">Your personal AI stylist - from your own closet</p>
+     <button class="homepage" onclick="homepage()">HomePage</button>
+  </div>
+
+                        <!--Login Page Bar-->
+<main>
+  
+  <div class="container">
+    
+    <div class="form-box">
+        <h1 style="padding-right: 100px;">Login</h1>
+      
+        <form>
+      <div class="input-group">
+          
+          <div class="input-field">
+            <input type="text" placeholder="Email or mobile number">
+          </div>     <!--end of input field-->
+          
+          <div class="input-field">
+            <input type="text" placeholder="Password">
+          </div>     <!--end of input field-->
+
+          <div class="btn-login">
+            <button type="button">Login</button>
+          </div> <!--end of button-->
+           
+         <div id="forgotpass">
+          <p><a href="ForgotyourPassword?">Forgot Your Password?</a></p>  
+          </div>
+        
+          <div class="bt-Signup"  onclick="openModal('signupModal')">
+            <p>New to Stylo?<a href="#SignUpNow">Sign Up Now</a></p>
+          </div>
+      </div>       <!--end of input group-->
+  
+     </form>
+    </div>    <!--end of form box-->
+  </div>     <!--end of container-->
+</main>
+
+
+
+
+                                <!--Footer-->
+  <footer>
+    <div class="foot-panel1" onclick="window.scrollTo(0, 0)">Back to top</div>
+
+    <div class="foot-panel2">
+      <ul>
+        <p>Get to know us</p>
+        <a href="#Careers">Careers</a>
+        <a href="#About">About</a>
+        <a href="#Investor Relations">Investor Relations</a>
+      </ul>
+      <ul>
+        <p>Help Centre</p>
+        <a href="#Jobs">Jobs</a>
+        <a href="#Cookies preferences">Cookies preferences</a>
+        <a href="#FAQ">FAQ</a>
+      </ul>
+      <ul>
+        <p>Media Centre</p>
+        <a href="#Terms of Use">Terms of Use</a>
+        <a href="#Contact Us">Contact Us</a>
+      </ul>
+    </div>
+    <div class="foot-panel3">Mail Us- shreedalvi9911@gmail.com</div>
+  </footer>
+                                                                        
+
+  <script src="app.js"></script>
+</body>
+</html>
