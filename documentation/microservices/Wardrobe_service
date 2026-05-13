@@ -1,0 +1,51 @@
+## 1. Wardrobe Service
+ 
+**Responsibility:** Source of truth for all wardrobe item data. Manages full item lifecycle from purchase to retirement.
+ 
+### Core Capabilities
+- Item CRUD operations (create, read, update, delete)
+- Wear event logging and tracking
+- Cost-per-wear (CPW) analytics
+- Lifecycle state machine management
+- Wardrobe-level analytics and insights
+### Key Endpoints
+```
+POST   /items              → Add new item (triggers Vision AI pipeline)
+GET    /items              → List user items (filterable, paginated)
+GET    /items/:id          → Single item detail
+PATCH  /items/:id          → Update item attributes
+DELETE /items/:id          → Retire/remove item
+POST   /items/:id/wear     → Log wear event
+GET    /items/analytics    → Wardrobe analytics (CPW, utilization, gaps)
+GET    /items/lifecycle    → Items by lifecycle stage with alerts
+```
+ 
+### Lifecycle State Machine
+ 
+Items progress through distinct lifecycle stages based on wear frequency and condition:
+ 
+```
+new_purchase
+    ↓
+breaking_in        (first wear logged)
+    ↓
+active             (≥5 wear events)
+    ↓
+underused          (wear rate < threshold for 60+ days)
+    ↓
+seasonal_hold      (manual or calendar-triggered)
+    ↓
+degrading          (condition_score < 0.50)
+    ↓
+retired            (manual action or auto-suggest)
+```
+ 
+### Business Logic
+- **Wear tracking:** Each wear event updates `last_worn` timestamp and increments wear count
+- **CPW calculation:** Auto-recalculated on every wear event (`purchase_price / wear_count`)
+- **Condition degradation:** Auto-decremented based on material type + wear frequency model
+- **Event publishing:** Kafka events published on every state transition for downstream consumers
+### Data Ownership
+- **Writes to:** PostgreSQL `items` table, S3 (images), Kafka `item.events` topic
+- **Reads from:** PostgreSQL `items` table exclusively
+---
