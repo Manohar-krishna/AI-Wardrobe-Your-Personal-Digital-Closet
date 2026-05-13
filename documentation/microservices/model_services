@@ -1,0 +1,80 @@
+## 3. Preference Model Service
+ 
+**Responsibility:** Maintains and evolves user's style preference vector through online learning from feedback signals.
+ 
+### Core Capabilities
+- Real-time preference vector updates
+- Style archetype classification
+- Temporal decay for evolving preferences
+- Cold start handling via onboarding quiz
+- Multi-dimensional preference tracking
+### Architecture Flow
+```
+Feedback Events (Kafka)
+        ↓
+Event Processor (normalize, weight, timestamp)
+        ↓
+Feature Extractor (extract style tags from items)
+        ↓
+Vector Updater (online learning with temporal decay)
+        ↓
+Preference Vector Store (pgvector / Pinecone)
+        ↓
+Archetype Classifier (map to style archetypes)
+```
+ 
+### Preference Vector Schema
+```typescript
+interface UserPreferenceVector {
+  user_id: string;
+  version: number;
+  updated_at: Date;
+  
+  // Multi-dimensional preference weights (0–1)
+  colour_affinities: Record<string, number>;      // hue → weight
+  pattern_weights: Record<string, number>;         // pattern_type → weight
+  silhouette_prefs: Record<string, number>;        // silhouette → weight
+  occasion_profile: Record<string, number>;        // occasion → weight
+  brand_affinities: Record<string, number>;        // brand → weight
+  
+  // Style archetype probability distribution
+  style_archetype_distribution: {
+    minimalist: number;
+    classic: number;
+    streetwear: number;
+    maximalist: number;
+    athleisure: number;
+  };
+  
+  // Learned scoring dimension weights
+  dimension_weights: {
+    colour: number;
+    occasion: number;
+    silhouette: number;
+    novelty: number;
+    preference: number;
+  };
+  
+  confidence_score: number;  // 0–1, gates preference-heavy recommendations
+}
+```
+ 
+### Training Signals
+ 
+**Explicit signals:**
+- Outfit ratings (1–5 stars post-wear)
+- Item condition updates
+- Outfit modification events
+**Implicit signals:**
+- Outfit wear events (positive)
+- Outfit skip events (negative)
+- Feed engagement (save > share > view > skip)
+- Dwell time on recommendation detail view
+### Cold Start Strategy
+- Style onboarding quiz seeds initial vector (7 questions, 30 seconds)
+- First 10 wear events: 50% personal preference + 50% archetype-average
+- Confidence score gates preference-heavy recommendations until ≥0.60 threshold
+### Data Ownership
+- **Reads from:** Kafka `feedback.events`, PostgreSQL `feedback_events` table
+- **Writes to:** Vector DB (embeddings), PostgreSQL `user_preferences` table
+---
