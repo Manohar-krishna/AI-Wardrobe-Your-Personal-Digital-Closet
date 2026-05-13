@@ -472,13 +472,6 @@ Manual Approval →
 Deploy to Production (Blue-Green)
 ```
 
-### 10.3 Infrastructure as Code
-- **Terraform**: Cloud resources provisioning
-- **Helm Charts**: Kubernetes deployments
-- **Ansible**: Server configuration
-
----
-
 ## 11. Cost Optimization
 
 ### 11.1 Estimated Monthly Costs (10K users)
@@ -525,26 +518,9 @@ Deploy to Production (Blue-Green)
 - **Federated Learning**: Train models on-device for privacy
 - **AR Try-On**: WebGL/Three.js for 3D rendering
 
-### Scalability Targets (100K users)
-- Multi-region deployment (US, EU, Asia)
-- Dedicated GPU cluster (Kubernetes GPU operator)
-- Kafka streaming for real-time analytics
-- Data lake for ML training (S3 + Athena)
-
 ---
 
-## Appendix
-
-### A. API Rate Limits
-- **Free Tier**: 100 req/hour, 5 AI inferences/day
-- **Premium Tier**: 1000 req/hour, unlimited AI inferences
-
-### B. Service SLAs
-- **API Availability**: 99.9% (43 min downtime/month)
-- **AI Inference**: <2s response time (p95)
-- **Image Upload**: <5s for 5MB images
-
-### C. Glossary
+### Glossary
 - **Embedding**: Numerical vector representation of images for similarity search
 - **Cosine Similarity**: Metric to measure similarity between vectors
 - **Circuit Breaker**: Pattern to prevent cascading failures
